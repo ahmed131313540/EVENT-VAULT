@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Event Vault | Discover. Experience. Remember.</title>
+<meta name="description" content="Discover events, book tiered tickets, and walk in with a QR-code ticket. Event Vault helps you find and manage memorable events.">
+<meta name="theme-color" content="#0B1020">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%237C3AED'/%3E%3Cstop offset='1' stop-color='%23EC4899'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='9' fill='url(%23g)'/%3E%3Cpath d='M9 13a2 2 0 0 1 0 4v1.5a1.5 1.5 0 0 0 1.5 1.5h11a1.5 1.5 0 0 0 1.5-1.5V17a2 2 0 0 1 0-4v-1.5A1.5 1.5 0 0 0 21.500 10h-11A1.500 1.500 0 0 0 9 11.500Z' fill='none' stroke='white' stroke-width='1.8'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="g-brand" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7C3AED"/><stop offset="1" stop-color="#EC4899"/></linearGradient>
+    <symbol id="logo-mark" viewBox="0 0 32 32">
+      <rect width="32" height="32" rx="9" fill="url(#g-brand)"/>
+      <g transform="translate(5 5) scale(.92)" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+<div class="bg-glow" aria-hidden="true"></div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="logo" href="#/" aria-label="Event Vault home"><svg width="32" height="32" aria-hidden="true"><use href="#logo-mark"/></svg>Event Vault</a>
+    <nav class="links" aria-label="Main" id="links">
+      <a href="#/" data-nav="home">Home</a>
+      <a href="#/events" data-nav="events">Events</a>
+      <a href="#/categories" data-nav="categories">Categories</a>
+      <a href="#/about" data-nav="about">About</a>
+      <a href="#/contact" data-nav="contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="btn-search" type="button" aria-label="Search events"></button>
+      <span class="desk" id="auth-slot"></span>
+      <a class="btn btn-primary btn-sm desk" href="#/create" id="btn-create"></a>
+      <button class="icon-btn menu-btn" id="btn-menu" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-panel"></button>
+    </div>
+  </div>
+  <div class="mobile-panel" id="mobile-panel"></div>
+</header>
+
+<main id="view" tabindex="-1"><div class="container" style="padding:120px 0;text-align:center"><div class="spinner lg" style="margin:auto"></div></div></main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="#/"><svg width="32" height="32" aria-hidden="true"><use href="#logo-mark"/></svg>Event Vault</a>
+        <p>Discover events, book tiered tickets and walk in with a QR code. Built for concerts, weddings, conferences, parties, workshops and festivals.</p>
+      </div>
+      <div><h4>Explore</h4><ul><li><a href="#/events">All events</a></li><li><a href="#/categories">Categories</a></li><li><a href="#/dashboard/tickets">My tickets</a></li></ul></div>
+      <div><h4>Organisers</h4><ul><li><a href="#/create">Create an event</a></li><li><a href="#/dashboard/events">Manage events</a></li><li><a href="#/scanner">Scan tickets</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="#/about">About</a></li><li><a href="#/contact">Contact</a></li></ul></div>
+    </div>
+    <div class="copy"><span>&copy; <span id="year"></span> Event Vault. All rights reserved.</span><span>Payments by Stripe. Tickets by email.</span></div>
+  </div>
+</footer>
+
+<div id="overlay-root"></div>
+<div class="toasts" id="toasts" aria-live="polite"></div>
+
+<script src="/assets/js/core.js"></script>
+<script src="/assets/js/pages-public.js"></script>
+<script src="/assets/js/pages-account.js"></script>
+<script src="/assets/js/pages-organizer.js"></script>
+<script src="/assets/js/pages-admin.js"></script>
+<script>EV.start();</script>
+</body>
+</html>
